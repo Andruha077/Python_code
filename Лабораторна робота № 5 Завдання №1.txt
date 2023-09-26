@@ -1,0 +1,25 @@
+def fibonacci(n):
+    fib_sequence = [1, 1]  # Початкова послідовність Фібоначчі
+
+    if n <= 0:
+        return []
+
+    if n == 1:
+        return [1]
+
+    while len(fib_sequence) < n:
+        next_fib = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_fib)
+
+    return fib_sequence
+
+
+try:
+    n = int(input("Введіть число n для обчислення послідовності Фібоначчі: "))
+    if n < 0:
+        print("Введіть додатне число n.")
+    else:
+        result = fibonacci(n)
+        print(f"Перші {n} чисел послідовності Фібоначчі: {result}")
+except ValueError:
+    print("Будь ласка, введіть коректне ціле число.")

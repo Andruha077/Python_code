@@ -1,0 +1,12 @@
+# Створюємо двовимірний масив розміром 7x7
+n = 7
+matrix = [[0] * n for _ in range(n)]
+
+# Заповнюємо масив відповідно до заданого зразка
+for i in range(n):
+    for j in range(n - i):
+        matrix[i][j] = i + j + 1
+
+# Виводимо масив на екран
+for row in matrix:
+    print(' '.join(map(str, row)))
